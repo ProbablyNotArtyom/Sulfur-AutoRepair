@@ -29,6 +29,7 @@ The *.DLLs from `<game_dir>\Sulfur_Data\Managed` need to be copied (NOT symlinke
 .NET Framework SDK (Developer Pack) v4.7.2 is required to build this project.
 
 On Linux, install `dotnet-sdk`. Any SDK version above v6.0 should be able to target v4.7.2. This project was built using the latest version (v10.0.100).
+
 Once the game DLLs have been copied into **.\lib**, the project can be built by running `dotnet build` in the root directory.
 This generates a lot of DLLs in the build folder, but the only important one is AutoRepair.dll, which is the finished plugin.
 
