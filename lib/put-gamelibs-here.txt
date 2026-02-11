@@ -1,0 +1,1 @@
+Copy the *.DLLs from <game_dir>\Sulfur_Data\Managed into here, where <game_dir> is wherever you installed the game (../steamapps/common/SULFUR)
