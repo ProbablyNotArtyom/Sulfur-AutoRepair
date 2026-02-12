@@ -32,7 +32,7 @@ The *.DLLs from `..\steamapps\common\SULFUR\Sulfur_Data\Managed` need to be copi
 
 ### Compile
 
-The project can be built by running `dotnet build` in the root directory.
+The project can be built by running `dotnet build` in the root directory. 
 This generates a lot of DLLs in the build folder, but the only important one is AutoRepair.dll, which is the finished plugin.
 
 
