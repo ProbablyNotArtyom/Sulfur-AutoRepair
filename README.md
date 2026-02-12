@@ -10,15 +10,18 @@ The repair sound effect will play if any items were repaired.
 
 You can also press **(L)** when in the hub to trigger repairs manually
 
+---
 
+## Requirements
 
-## Installation
+- [BepInEx 5.x](https://github.com/BepInEx/BepInEx). Installation instructions [can be found here](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
+- SULFUR `v0.14.14`. Other versions will likely work, but it has not been tested.
 
-This mod requires [BepInEx 5.x](https://github.com/BepInEx/BepInEx).
-It's a simple install and the instructions to do so [can be found here](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
+## Installation 
 
-Put AutoRepair.dll into `..\SULFUR\BepInEx\plugins\`
+Put AutoRepair.dll into `..\SULFUR\BepInEx\plugins\` after installing BepInEx. If the directory does not exist, either create it, or run the game with BepInEx at least once to generate it.
 
+---
 
 ## Building
 
