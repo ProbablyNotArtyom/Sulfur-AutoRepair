@@ -23,7 +23,7 @@ Put AutoRepair.dll into `..\SULFUR\BepInEx\plugins\` after installing BepInEx. I
 
 ### Setup
 
-The .NET Framework SDK (Developer Pack) is required to build this project, which is provided by the `dotnet-sdk` package on Arch.
+The .NET Framework SDK (Developer Pack) is required to build this project, provided by the `dotnet-sdk` package on Arch.
 I am using the latest version (v10.0.100), but anything above v6.0 should work.
 
 I have only tested building on Linux; it should work on Windows, but I can't provide any details on how to do so.
