@@ -76,6 +76,7 @@ public class AutoRepair_Component : MonoBehaviour
 		InventoryItem playerWeapon0, playerWeapon1;
 		int numRepairs = 0;
 
+		// Try to repair each inventory slot
 		if (equipmentManager.equippedItems.TryGetValue(InventorySlot.Head, out playerHead))				// Head slot
 			numRepairs += DoRepair(playerHead);
 		if (equipmentManager.equippedItems.TryGetValue(InventorySlot.Torso, out playerTorso))			// Torso slot
