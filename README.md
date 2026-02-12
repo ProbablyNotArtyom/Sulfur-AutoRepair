@@ -1,6 +1,6 @@
 # Sulfur-AutoRepair
 
-A mod for SULFUR that automatically repairs equipped items when entering the hub world (The church)
+A mod for SULFUR that automatically repairs equipped items when entering the hub world (The church).
 
 ## Usage
 
@@ -8,7 +8,7 @@ When entering the hub, all equipped items (head, torso, left+right foot, weapon1
 Repairs cost money the same way it would doing it manually, which will be deducted from the stash first and from the player next just like the base game.
 The repair sound effect will play if any items were repaired.
 
-You can also press **(L)** when in the hub to trigger repairs manually
+You can also press **(L)** when in the hub to trigger repairs manually.
 
 ## Requirements
 
