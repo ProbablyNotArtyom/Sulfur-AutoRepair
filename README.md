@@ -17,7 +17,7 @@ You can also press **(L)** when in the hub to trigger repairs manually.
 
 ## Installation 
 
-Put AutoRepair.dll into `...\steamapps\common\SULFUR\BepInEx\plugins\` after installing BepInEx. If the directory does not exist, either create it, or run the game with BepInEx at least once to generate it.
+Put AutoRepair.dll into `..\steamapps\common\SULFUR\BepInEx\plugins\` after installing BepInEx. If the directory does not exist, either create it, or run the game with BepInEx at least once to generate it.
 
 ## Building
 
