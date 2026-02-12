@@ -10,8 +10,6 @@ The repair sound effect will play if any items were repaired.
 
 You can also press **(L)** when in the hub to trigger repairs manually
 
----
-
 ## Requirements
 
 - [BepInEx 5.x](https://github.com/BepInEx/BepInEx). Installation instructions [can be found here](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
