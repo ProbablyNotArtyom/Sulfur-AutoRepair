@@ -21,7 +21,7 @@ Put AutoRepair.dll into `..\SULFUR\BepInEx\plugins\` after installing BepInEx. I
 
 # Developers
 
-## Setup
+### Setup
 
 The .NET Framework SDK (Developer Pack) is required to build this project, which is provided by the `dotnet-sdk` package on Arch.
 I am using the latest version (v10.0.100), but anything above v6.0 should work.
@@ -30,7 +30,7 @@ I have only tested building on Linux; it should work on Windows, but I can't pro
 
 The *.DLLs from `..\steamapps\common\SULFUR\Sulfur_Data\Managed` need to be copied (NOT symlinked) into **.\lib**.
 
-## Building
+### Building
 
 Once the game DLLs have been copied into **.\lib**, the project can be built by running `dotnet build` in the root directory.
 This generates a lot of DLLs in the build folder, but the only important one is AutoRepair.dll, which is the finished plugin.
