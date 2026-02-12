@@ -19,7 +19,7 @@ You can also press **(L)** when in the hub to trigger repairs manually.
 
 Put AutoRepair.dll into `..\SULFUR\BepInEx\plugins\` after installing BepInEx. If the directory does not exist, either create it, or run the game with BepInEx at least once to generate it.
 
-# Developers
+## Building
 
 ### Setup
 
@@ -30,7 +30,7 @@ I have only tested building on Linux; it should work on Windows, but I can't pro
 
 The *.DLLs from `..\steamapps\common\SULFUR\Sulfur_Data\Managed` need to be copied (NOT symlinked) into **.\lib**.
 
-### Building
+### Compile
 
 Once the game DLLs have been copied into **.\lib**, the project can be built by running `dotnet build` in the root directory.
 This generates a lot of DLLs in the build folder, but the only important one is AutoRepair.dll, which is the finished plugin.
