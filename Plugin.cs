@@ -5,6 +5,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 using PerfectRandom.Sulfur.Core;
 using PerfectRandom.Sulfur.Core.Items;
@@ -36,7 +37,7 @@ public class Plugin : BaseUnityPlugin
 // An instance of this class gets injected into the main gameobject list, where unity will call Update() each frame on each object
 public class AutoRepair_Component : MonoBehaviour
 {
-	private const KeyCode TRIGGER_KEY = KeyCode.L;		// The key used to trigger the manual repair
+	private const Key TRIGGER_KEY = Key.L;				// The key used to trigger the manual repair
 	private int triggerState = 0;						// Monostable timer, 0 when last level was not the church and we havent repaired yet
 
 	// Repair items ONCE every time the church is loaded and the gameState is running
@@ -59,7 +60,7 @@ public class AutoRepair_Component : MonoBehaviour
 		}
 
 		// Handle manually repairing all items using the hotkey
-		if (Input.GetKeyDown(TRIGGER_KEY) && StaticInstance<GameManager>.Instance.InSafeZone)
+		if (Keyboard.current[TRIGGER_KEY].isPressed && StaticInstance<GameManager>.Instance.InSafeZone)
 			RepairAll();
 	}
 
@@ -146,8 +147,8 @@ public class AutoRepair_Component : MonoBehaviour
 			priceFromPlayer -= playerStash;     // Discount the player whatever the stash could pay for
 		}
 
-		player.Stats.ModifyCoinsStash(-priceFromStash);     				// Update stash money
-		player.Stats.ModifyCoins(-priceFromPlayer);         				// Update player money
+		player.Stats.ModifyCoinsStash(-priceFromStash, null);     				// Update stash money
+		player.Stats.ModifyCoins(-priceFromPlayer, null);         				// Update player money
 		item.ModifyDurability(item.DurabilityMax);                          // Repair the item
 		StaticInstance<AnalyticsManager>.Instance.TrackItemRepair(item);    // Track the repair as the base game does
 
