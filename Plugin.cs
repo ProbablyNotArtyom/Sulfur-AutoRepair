@@ -1,10 +1,13 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 using PerfectRandom.Sulfur.Core;
@@ -91,9 +94,6 @@ public class AutoRepair_Component : MonoBehaviour
 		if (equipmentManager.equippedItems.TryGetValue(InventorySlot.Weapon1, out playerWeapon1))		// Weapon 1
 			numRepairs += DoRepair(playerWeapon1);
 
-		// Play a sound effect if any items were repaired
-		if (numRepairs > 0)
-			StaticInstance<SoundBankUI>.Instance.PlayClip(UISounds.UI_Repair);
 	}
 
 	// Calculate the cost to repair an item as implemented by the repair station (PerfectRandom.Sulfur.Gameplay.RepairStation)
@@ -122,8 +122,9 @@ public class AutoRepair_Component : MonoBehaviour
 		if (! StaticInstance<GameManager>.Instance.InSafeZone)
 			return 0;
 
-		// If cost is 0, then dont even bother because it cannot go any higher
-		if (cost <= 0)
+		// If durability is max or 1 below max, then dont bother repairing it
+		// Ignore 1 below because SULFUR has a bug on some platforms where fully repaired items are always 1 less than their real max durability
+		if (item.DurabilityCurrent <= item.DurabilityMax && item.DurabilityCurrent >= item.DurabilityMax - 1)
 			return 0;
 
 		// Make sure the player has enough combined money
@@ -152,6 +153,7 @@ public class AutoRepair_Component : MonoBehaviour
 		item.ModifyDurability(item.DurabilityMax);                          // Repair the item
 		StaticInstance<AnalyticsManager>.Instance.TrackItemRepair(item);    // Track the repair as the base game does
 
+		StaticInstance<SoundBankUI>.Instance.PlayClip(UISounds.UI_Repair);
 		Plugin.Logger.LogInfo($"   Repairing \"{item.itemDefinition.displayName}\", (cost: {cost}, stash: {priceFromStash}, player: {priceFromPlayer})");
 		return 1;
 	}
